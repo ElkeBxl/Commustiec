@@ -1,14 +1,13 @@
 import * as express from "express";
 import { Request, Response } from "express";
+import { TYPES } from "../types";
 import { ReviewService } from "../services/review";
+import { inject, injectable } from "inversify";
 
+@injectable()
 export class ReviewController {
 
-    private reviewService: ReviewService;
-
-    public constructor() {
-        this.reviewService = new ReviewService();
-    }
+    public constructor(@inject(TYPES.ReviewService) private reviewService: ReviewService) { }
 
     public get = (req: Request, res: Response) => {
         res.status(200).send(this.reviewService.getReviews());

@@ -1,6 +1,8 @@
 import { ReviewRepository } from "./review";
 import { Review } from "../models/review";
+import { injectable } from "inversify";
 
+@injectable()
 export class MockReviewRepository implements ReviewRepository {
 
     public getReviews(): Review[] {
