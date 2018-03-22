@@ -22,7 +22,13 @@ export class ReviewController {
         const data = req.body;
         console.log(data);
 
-        this.reviewService.addReview(new Review({ Album: data.album, Artist: data.artist }));
+        let review = new Review({ 
+            Album: data.album, 
+            Artist: data.artist, 
+            Rating: data.rating, 
+        });
+
+        this.reviewService.addReview(review);
 
         res.status(200).render('pages/create', { description: "Review created" });
     };
