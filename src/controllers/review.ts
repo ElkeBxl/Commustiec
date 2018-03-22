@@ -6,19 +6,17 @@ export class ReviewController {
 
     private reviewService: ReviewService;
 
-    public constructor(router: express.Router) {
-
+    public constructor() {
         this.reviewService = new ReviewService();
-
-        router.get('/', (req: Request, res: Response) => {
-            res.status(200).send(this.reviewService.getReviews());
-        });
-    
-        router.post('/', (req: Request, res: Response) => {
-            const data = req.body;
-            // query a database and save data
-            res.status(200).send(data);
-        });
     }
+
+    public get = (req: Request, res: Response) => {
+        res.status(200).send(this.reviewService.getReviews());
+    };
+
+    public post = (req: Request, res: Response) => {
+        const data = req.body;
+        res.status(200).send(data);
+    };
 
 }

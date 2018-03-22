@@ -22,8 +22,12 @@ class App {
     private routes(): void {
         const router = express.Router();
     
-        this.reviewController = new ReviewController(router);
+        this.reviewController = new ReviewController();
     
+        router.get('/', this.reviewController.get);
+
+        router.post('/', this.reviewController.post);
+
         this.app.use('/', router)
     
     }
