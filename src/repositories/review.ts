@@ -1,4 +1,4 @@
-import { Review } from "../models/review";
+import { Review } from "../models";
 
 export interface ReviewRepository {
     getReviews(): Review[];

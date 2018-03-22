@@ -1,7 +1,7 @@
 import * as express from "express";
 import { Request, Response } from "express";
 import { TYPES } from "../types";
-import { ReviewService } from "../services/review";
+import { ReviewService } from "../services";
 import { inject, injectable } from "inversify";
 
 @injectable()

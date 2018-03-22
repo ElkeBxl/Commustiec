@@ -1,6 +1,5 @@
-import { MockReviewRepository } from "../repositories/review.mock";
-import { ReviewRepository } from "../repositories/review";
-import { Review } from "../models/review";
+import { ReviewRepository } from "../repositories";
+import { Review } from "../models";
 import { injectable, inject } from "inversify";
 import { TYPES } from "../types";
 

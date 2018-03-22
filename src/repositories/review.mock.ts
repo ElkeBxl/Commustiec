@@ -1,5 +1,5 @@
 import { ReviewRepository } from "./review";
-import { Review } from "../models/review";
+import { Review } from "../models";
 import { injectable } from "inversify";
 
 @injectable()
