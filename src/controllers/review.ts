@@ -13,9 +13,13 @@ export class ReviewController {
         res.status(200).render('pages/index', { reviews: this.reviewService.getReviews() });
     };
 
-    public post = (req: Request, res: Response) => {
+    public createGet = (req: Request, res: Response) => {
+        res.status(200).render('pages/create', { description: "Please fill in the form" });
+    };
+
+    public createPost = (req: Request, res: Response) => {
         const data = req.body;
-        res.status(200).send(data);
+        res.status(200).render('pages/create', { description: "Form submitted" });
     };
 
 }

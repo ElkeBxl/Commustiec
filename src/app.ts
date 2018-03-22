@@ -41,7 +41,8 @@ class App {
         const router = express.Router();
     
         router.get('/', this.reviewController.get);
-        router.post('/', this.reviewController.post);
+        router.get('/create', this.reviewController.createGet);
+        router.post('/create', this.reviewController.createPost);
 
         this.app.use('/', router)
     
