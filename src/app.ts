@@ -6,6 +6,7 @@ import { ReviewController } from "./controllers";
 import { TYPES } from "./types";
 import { ReviewRepository, MockReviewRepository } from "./repositories";
 import { ReviewService } from "./services";
+import MyIocContainer from "iocconfig";
 
 class App {
 
@@ -23,12 +24,7 @@ class App {
     private reviewController: ReviewController;
 
     private dependencyInjection(): void {
-        this.diContainer = new Container();
-
-        this.diContainer.bind<ReviewRepository>(TYPES.ReviewRepository).to(MockReviewRepository);
-        this.diContainer.bind<ReviewService>(TYPES.ReviewService).to(ReviewService);
-        this.diContainer.bind<ReviewController>(TYPES.ReviewController).to(ReviewController);
-
+        this.diContainer = MyIocContainer.configure();
         this.reviewController = this.diContainer.get<ReviewController>(TYPES.ReviewController);
     }
 
