@@ -6,7 +6,7 @@ import { ReviewController } from "./controllers";
 import { TYPES } from "./types";
 import { ReviewRepository, MockReviewRepository } from "./repositories";
 import { ReviewService } from "./services";
-import MyIocContainer from "iocconfig";
+import MyIocContainer from "./iocconfig";
 
 class App {
 
@@ -29,8 +29,12 @@ class App {
     }
 
     private config(): void {
-        this.app.use(bodyParser.json());
-        this.app.use(bodyParser.urlencoded({ extended: false }));
+        const path = require('path');
+        this.app.use(express.static(path.join(__dirname, '../public')));
+        this.app.set('views', path.join(__dirname, '../views'));
+        this.app.set('view engine', 'ejs');
+        // this.app.use(bodyParser.json());
+        // this.app.use(bodyParser.urlencoded({ extended: false }));
     }
     
     private routes(): void {

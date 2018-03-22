@@ -10,7 +10,8 @@ export class ReviewController {
     public constructor(@inject(TYPES.ReviewService) private reviewService: ReviewService) { }
 
     public get = (req: Request, res: Response) => {
-        res.status(200).send(this.reviewService.getReviews());
+        //res.status(200).send(this.reviewService.getReviews());
+        res.render('pages/index');
     };
 
     public post = (req: Request, res: Response) => {
