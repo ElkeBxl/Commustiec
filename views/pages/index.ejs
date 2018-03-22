@@ -4,10 +4,11 @@
     <% include ../partials/header.ejs %>
 </head>
 <body>
-
-  <% include ../partials/nav.ejs %>
-
-    <p>Hello world!</p>
-
+    <% include ../partials/nav.ejs %>
+    <ul>
+    <% reviews.forEach(function(r) { %>
+        <li><%= r.Artist %> - <%= r.Album %></li>
+    <% }); %>
+    </ul>
 </body>
 </html>
