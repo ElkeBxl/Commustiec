@@ -1,6 +1,14 @@
 <% include ../partials/header.ejs %>
 <form method="post">
     <p><%= description %></p>
+    <p>
+        <label>Artist name</label>
+        <input type="text" name="artist" value="" />
+    </p>
+    <p>
+        <label>Album name</label>
+        <input type="text" name="album" value="" />
+    </p>
     <input type="submit" name="submit" value="Create review" />
 </form>
 <% include ../partials/footer.ejs %>

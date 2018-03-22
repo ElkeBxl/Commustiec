@@ -3,6 +3,7 @@ import { Request, Response } from "express";
 import { TYPES } from "../types";
 import { ReviewService } from "../services";
 import { inject, injectable } from "inversify";
+import { Review } from "../models";
 
 @injectable()
 export class ReviewController {
@@ -19,7 +20,11 @@ export class ReviewController {
 
     public createPost = (req: Request, res: Response) => {
         const data = req.body;
-        res.status(200).render('pages/create', { description: "Form submitted" });
+        console.log(data);
+
+        this.reviewService.addReview(new Review({ Album: data.album, Artist: data.artist }));
+
+        res.status(200).render('pages/create', { description: "Review created" });
     };
 
 }

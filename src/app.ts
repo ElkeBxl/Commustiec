@@ -33,8 +33,8 @@ class App {
         this.app.use(express.static(path.join(__dirname, '../public')));
         this.app.set('views', path.join(__dirname, '../views'));
         this.app.set('view engine', 'ejs');
-        // this.app.use(bodyParser.json());
-        // this.app.use(bodyParser.urlencoded({ extended: false }));
+        this.app.use(bodyParser.json());
+        this.app.use(bodyParser.urlencoded({ extended: false }));
     }
     
     private routes(): void {
