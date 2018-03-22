@@ -8,7 +8,7 @@ describe('Review mock repository', () => {
 
     let repository: MockReviewRepository;
 
-    before(() => {
+    beforeEach(() => {
         this.repository = new MockReviewRepository();
     });
 
@@ -33,6 +33,19 @@ describe('Review mock repository', () => {
         let newReviewsAmount = this.repository.getReviews().length;
 
         expect(newReviewsAmount).to.be.equal(currentReviewsAmount + 3);
+    });
+
+    it('should be possible to delete reviews', () => {
+        let firstReview = this.repository.getReviews()[0];
+        let secondReview = this.repository.getReviews()[1];
+        let currentReviewsAmount = this.repository.getReviews().length;
+
+        this.repository.deleteReview(firstReview);
+        this.repository.deleteReview(secondReview);
+
+        let newReviewsAmount = this.repository.getReviews().length;
+
+        expect(newReviewsAmount).to.be.equal(currentReviewsAmount - 2);
     });
 
 });

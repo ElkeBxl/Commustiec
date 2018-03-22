@@ -20,4 +20,8 @@ export class MockReviewRepository implements ReviewRepository {
         this.reviews.push(review);
     }
 
+    public deleteReview(review: Review) {
+        this.reviews.splice(this.reviews.findIndex((r) => r.Album == review.Album && r.Artist == review.Artist), 1);
+    }
+
 }

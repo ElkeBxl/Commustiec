@@ -4,4 +4,6 @@ export interface ReviewRepository {
     getReviews(): Review[];
 
     addReview(review: Review);
+
+    deleteReview(review: Review);
 }
