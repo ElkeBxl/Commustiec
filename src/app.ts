@@ -10,7 +10,7 @@ import { ReviewService } from "./services/review";
 
 class App {
 
-    constructor(private reviewController: ReviewController) {
+    constructor() {
         this.app = express();
         this.dependencyInjection();
 
@@ -23,6 +23,8 @@ class App {
     public app: express.Application;
 
     private diContainer: Container;
+
+    private reviewController: ReviewController;
 
     private dependencyInjection(): void {
         this.diContainer = new Container();
