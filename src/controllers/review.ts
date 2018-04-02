@@ -25,8 +25,25 @@ export class ReviewController {
         let review = new Review({ 
             Album: data.album, 
             Artist: data.artist, 
-            Rating: data.rating, 
+            DiscoverdHow: data['discovered-how'],
+            FirstListenTime: data['first-listen-time'],
+            FirstListenDuration: data['first-listen-duration'],
+            FirstListenInterrupted: data['first-listen-interrupted'],
+            FirstListenFeeling: data['first-listen-feeling'],
+            ListenedBefore: data['listened-before'],
+            ListenAgain: data['listen-again'],
+            ListenAgainWhen: data['listen-again-when'],
+            DescribeThreeWords: data['describe-three-words'],
+            SoundsLike: data['sounds-like'],
+            SeeThemLive: data['see-them-live'],
+            Rating: data['rating'],
+            BestSong: data['best-song'],
+            ContinuedListeningWhen: data['continued-listening'],
+            NewRating: data['new-rating'],
+            SecondListenFeeling: data['second-listen-feeling'] 
         });
+
+        console.log(review);
 
         this.reviewService.addReview(review);
 

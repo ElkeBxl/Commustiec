@@ -2,6 +2,19 @@
     padding: 20px;
 }
 
+body, p, label, li {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    letter-spacing: 0px;
+    word-spacing: 0px;
+    color: #000000;
+    font-weight: 400;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+}
+
 h1 {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     font-size: 28px;
@@ -14,19 +27,6 @@ h1 {
     font-variant: normal;
     text-transform: none;
     margin: 0px 0px 20px 0px;
-}
-
-p, label, li {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
-    letter-spacing: 0px;
-    word-spacing: 0px;
-    color: #000000;
-    font-weight: 400;
-    text-decoration: none;
-    font-style: normal;
-    font-variant: normal;
-    text-transform: none;
 }
 
 nav {
@@ -42,4 +42,5 @@ nav li {
 .pure-button.pure-button-primary {
     background-color: rgb(118, 0, 148);
     color: #fff;
+    font-size: 15px;
 }
